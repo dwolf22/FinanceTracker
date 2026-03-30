@@ -85,10 +85,7 @@ function App() {
         <ExpenseTable expenses={expenses} deleteExpense={deleteExpense} />
         <Total money={money} addFunds={addFunds} setAmount={setAmount} substractFunds={substractFunds} showButton={showButton} showSubstract={showSubstract} add={add} substract={substract} reset={reset} />
       </div>
-      
-
-
-
+    
     </>
   )
 }
