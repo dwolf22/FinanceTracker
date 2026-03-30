@@ -1,4 +1,4 @@
-export default function ExpenseTable({ expenses }) {
+export default function ExpenseTable({ expenses, deleteExpense}) {
     return (
         <div>
             <table>
@@ -17,7 +17,7 @@ export default function ExpenseTable({ expenses }) {
                             <td>${i.amount}</td>
                             <td>{i.category}</td>
                             <td>{i.date}</td>
-                            <td><button>Delete</button></td>
+                            <td><button onClick={() => deleteExpense(i.id)}>Delete</button></td>
                         </tr>
                     ))}
                 </tbody>
