@@ -25,6 +25,10 @@ function App() {
   }, [expenses]);
 
 
+  useEffect(() => {
+    localStorage.setItem("money", JSON.stringify(money));
+  }, [money])
+
   const addExpense = (newExpense) => {
 
     setMoney(prev => prev - parseFloat(newExpense.amount))
