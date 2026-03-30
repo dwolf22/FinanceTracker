@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import './App.css'
 import ExpenseForm from './ExpenseForm'
 import { useEffect } from 'react'
 import ExpenseTable from './ExpenseTable'
@@ -14,8 +13,8 @@ function App() {
 
 
   const [money, setMoney] = useState(() => {
-  const savedMoney = localStorage.getItem("money");
-  return savedMoney ? JSON.parse(savedMoney): 0
+    const savedMoney = localStorage.getItem("money");
+    return savedMoney ? JSON.parse(savedMoney) : 0
   })
 
   const [amount, setAmount] = useState("")
@@ -80,10 +79,14 @@ function App() {
 
   return (
     <>
-      <h1>Expense Tracker</h1>
-      <ExpenseForm addExpense={addExpense} />
-      <ExpenseTable expenses={expenses} deleteExpense={deleteExpense} />
-      <Total money={money} addFunds={addFunds} setAmount={setAmount} substractFunds={substractFunds} showButton={showButton} showSubstract={showSubstract} add={add} substract={substract} reset={reset}/>
+      <div className='container text-center'>
+        <h1>Expense Tracker</h1>
+        <ExpenseForm addExpense={addExpense} />
+        <ExpenseTable expenses={expenses} deleteExpense={deleteExpense} />
+        <Total money={money} addFunds={addFunds} setAmount={setAmount} substractFunds={substractFunds} showButton={showButton} showSubstract={showSubstract} add={add} substract={substract} reset={reset} />
+      </div>
+      
+
 
 
     </>
